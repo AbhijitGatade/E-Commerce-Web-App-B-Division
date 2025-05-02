@@ -21,6 +21,9 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row m-2">
+                                <div class="col-lg-12">
+                                    <asp:Label runat="server" ID="lblMessage" ForeColor="Red"></asp:Label>
+                                </div>
                                 <div class="col-lg-4">
                                     Name*
                                 <asp:TextBox runat="server" CssClass="form-control" ID="txtName"></asp:TextBox>
@@ -52,8 +55,8 @@
                                     <Columns>
                                         <asp:TemplateField HeaderText="Actions" ItemStyle-Width="100px">
                                             <ItemTemplate>
-                                                <asp:HyperLink ID="hlinkEdit" CssClass="btn btn-sm btn-primary" runat="server"><i class="bi bi-pencil"></i></asp:HyperLink>
-                                                <asp:HyperLink ID="hlinkDelete" CssClass="btn btn-sm btn-danger" runat="server"><i class="bi bi-trash"></i></asp:HyperLink>
+                                                <asp:HyperLink ID="hlinkEdit" CssClass="btn btn-sm btn-primary" NavigateUrl='<%# "Admins.aspx?action=edit&id=" + Eval("Id") %>'  runat="server"><i class="bi bi-pencil"></i></asp:HyperLink>
+                                                <asp:HyperLink onclick="return confirm('Sure to delete?')" ID="hlinkDelete" CssClass="btn btn-sm btn-danger" NavigateUrl='<%# "Admins.aspx?action=delete&id=" + Eval("Id") %>'  runat="server"><i class="bi bi-trash"></i></asp:HyperLink>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:BoundField DataField="SrNo" HeaderText="No" ItemStyle-HorizontalAlign="Right" ItemStyle-Width="60px" />

@@ -11,7 +11,7 @@ namespace E_Commerce_Web_App_B_Division.Admin
 {
 
 
-    public partial class Admins
+    public partial class Categories
     {
 
         /// <summary>
@@ -42,40 +42,31 @@ namespace E_Commerce_Web_App_B_Division.Admin
         protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorName;
 
         /// <summary>
-        /// txtUsername control.
+        /// txtSrNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsername;
+        protected global::System.Web.UI.WebControls.TextBox txtSrNo;
 
         /// <summary>
-        /// validatorUsername control.
+        /// validateSrNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorUsername;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateSrNo;
 
         /// <summary>
-        /// txtPassword control.
+        /// validateRangeSrNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
-
-        /// <summary>
-        /// validatorPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorPassword;
+        protected global::System.Web.UI.WebControls.RangeValidator validateRangeSrNo;
 
         /// <summary>
         /// btnSave control.

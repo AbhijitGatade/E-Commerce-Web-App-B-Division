@@ -199,7 +199,10 @@
     <Content Include="admin-assets\vendors\tinymce\tinymce.min.js" />
     <Content Include="AdminLogin.aspx" />
     <Content Include="Admin\Admins.aspx" />
+    <Content Include="Admin\Categories.aspx" />
     <Content Include="Admin\Home.aspx" />
+    <Content Include="Admin\Product.aspx" />
+    <Content Include="Admin\Products.aspx" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\flex-slider.css" />
     <Content Include="assets\css\font-awesome.css" />
@@ -297,12 +300,33 @@
     <Compile Include="Admin\Admins.aspx.designer.cs">
       <DependentUpon>Admins.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Categories.aspx.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Categories.aspx.designer.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -316,6 +340,8 @@
     </Compile>
     <Compile Include="Models\DBClass.cs" />
     <Compile Include="Models\TblAdmin.cs" />
+    <Compile Include="Models\TblCategories.cs" />
+    <Compile Include="Models\TblProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.Master.cs">
       <DependentUpon>User.Master</DependentUpon>
@@ -350,6 +376,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="productpics\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

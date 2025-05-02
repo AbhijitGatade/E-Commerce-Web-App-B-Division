@@ -125,13 +125,18 @@
                             </a>
                         </li>
                         <li>
-                            <a href="Home.aspx">
+                            <a href="Categories.aspx">
                                 <i class="bi bi-circle"></i><span>Categories</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Home.aspx">
+                            <a href="Products.aspx">
                                 <i class="bi bi-circle"></i><span>Products</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Product.aspx">
+                                <i class="bi bi-circle"></i><span>Add Product</span>
                             </a>
                         </li>
                     </ul>
