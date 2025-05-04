@@ -68,5 +68,32 @@ namespace E_Commerce_Web_App_B_Division.Models
             query = "SELECT *, ROW_NUMBER() OVER(ORDER BY Name) AS SrNo FROM admins ORDER BY Name";
             return db.List(query);
         }
+
+        public bool ValidateAdmin(string username, string password, ref string message)
+        {
+            query = "SELECT * FROM Admins WHERE Username = '" + username.Replace("'", "''") + "'";
+            DataTable dtable = db.List(query);
+            if(dtable.Rows.Count > 0)
+            {
+                string dbPassword = dtable.Rows[0]["Password"].ToString();
+                if (password.Equals(dbPassword))
+                {
+                    this.Id = int.Parse(dtable.Rows[0]["Id"].ToString());
+                    this.Name = dtable.Rows[0]["Name"].ToString();
+                    this.Username = dtable.Rows[0]["Username"].ToString();
+                    return true;
+                }
+                else
+                {
+                    message = "Invalid password";
+                    return false;
+                }
+            }
+            else
+            {
+                message = "Invalid username";
+                return false;
+            }
+        }
     }
 } 

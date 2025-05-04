@@ -11,7 +11,14 @@ namespace E_Commerce_Web_App_B_Division.Admin
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+			if (!IsPostBack)
+			{
+                HttpCookie userTypeCookie = Request.Cookies["UserType"];
+                if (userTypeCookie == null || userTypeCookie.Value != "Admin")
+                {
+                    Response.Redirect("~/Index.aspx");
+                }
+            }
 		}
 	}
 }

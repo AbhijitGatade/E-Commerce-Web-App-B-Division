@@ -55,7 +55,13 @@ namespace E_Commerce_Web_App_B_Division.Models
 
         public DataTable List()
         {
-            query = "SELECT P.*, C.Name AS CategoryName, ROW_NUMBER() OVER(ORDER BY C.SrNo, P.SrNo) AS SerialNo FROM products AS P INNER JOIN categories AS C ON P.CategoryId = C.Id ORDER BY C.SrNo, P.SrNo";
+            query = "SELECT P.*, C.Name AS CategoryName, ROW_NUMBER() OVER(ORDER BY C.SrNo, P.SrNo) AS SerialNo ";
+            query += "FROM products AS P INNER JOIN categories AS C ON P.CategoryId = C.Id ";
+            if(CategoryId    != 0)
+            {
+                query += "WHERE CategoryId = " + CategoryId + " ";
+            }
+            query += "ORDER BY C.SrNo, P.SrNo";
             DataTable dtable = db.List(query);
             return dtable;
         }

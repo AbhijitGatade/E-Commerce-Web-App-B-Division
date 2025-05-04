@@ -1,4 +1,5 @@
-﻿using System;
+﻿using E_Commerce_Web_App_B_Division.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,7 +17,23 @@ namespace E_Commerce_Web_App_B_Division
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-			Response.Redirect("Admin/Home.aspx");
+			string message = "";
+			string username = txtUsername.Text;
+			string password = txtPassword.Text;
+
+			TblAdmin admin = new TblAdmin();
+			bool result = admin.ValidateAdmin(username, password, ref message);
+			if (result)
+			{
+				Response.Cookies.Add(new HttpCookie("UserType", "Admin"));
+                Response.Cookies.Add(new HttpCookie("Id", admin.Id.ToString()));
+                Response.Cookies.Add(new HttpCookie("Name", admin.Name));
+                Response.Redirect("Admin/Home.aspx");
+			}
+			else
+			{
+				lblMessage.Text = message;
+            }
         }
     }
 }

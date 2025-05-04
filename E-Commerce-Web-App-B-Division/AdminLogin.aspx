@@ -51,6 +51,7 @@
                   <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
                     <p class="text-center small">Enter your username & password to login</p>
+                      <asp:Label runat="server" ID="lblMessage" ForeColor="Red" Font-Size="Small"></asp:Label>
                   </div>
 
                   <div class="row g-3 needs-validation">
@@ -59,14 +60,14 @@
                       <label for="yourUsername" class="form-label">Username</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" name="username" class="form-control" id="yourUsername">
+                          <asp:TextBox runat="server" ID="txtUsername" CssClass="form-control" required></asp:TextBox>
                         <div class="invalid-feedback">Please enter your username.</div>
                       </div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword">
+                      <asp:TextBox runat="server" ID="txtPassword" TextMode="Password" CssClass="form-control" required></asp:TextBox>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
                     <div class="col-12">
